@@ -104,7 +104,7 @@ def logout():
 def accountdelete(username):
     users.pop(username)
     return redirect(url_for('home'))
-app.run(debug=True,use_reloader=True)
+# app.run(debug=True,use_reloader=True)
 port = int(os.environ.get("PORT", 5000))
 app.run(host="0.0.0.0", port=port)
 
