@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bank Dashboard</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='dashboard.css')}}" />
+</head>
+<body>
+  <div class="dashboard">
+    <nav class="sidebar">
+      <h2>Dashboard</h2>
+      <ul>
+        <li><a href="{{url_for('deposit',username=username)}}">Deposit</a></li>
+        <li><a href="{{url_for('withdraw',username=username)}}">Withdrawal</a></li>
+        <li><a href="{{url_for('balance',username=username)}}">Check Balance</a></li>
+        <li><a href="{{url_for('statementsdata',username=username)}}">Statement</a></li>
+        <li><a href="{{url_for('accountdelete',username=username)}}">Delete Account</a></li>
+        <li><a href="{{url_for('logout',username=username)}}">Logout</a></li>
+        
+      </ul>
+    </nav>
+    <!-- {{username}} -->
+    <main class="main-content atm-welcome">
+  <div class="welcome-card">
+    <h2>Welcome to Your ATM Dashboard</h2>
+    <p>Hello, {{username}} 👋</p>
+    <p>This dashboard gives you access to essential ATM services like Deposit, Withdrawal, Balance Inquiry, and Account Statement.</p>
+    <p>Navigate using the sidebar to get started.</p>
+    <div class="atm-icon">🏦</div>
+  </div>
+</main>
+
+  </div>
+</body>
+</html>

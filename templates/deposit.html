@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ATM Dashboard - Deposit</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='deposit.css')}}" />
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Dashboard</h2>
+      <ul>
+        <li><a href="{{url_for('dashboard',username=username)}}">Home</a></li>
+        <li><a href="{{url_for('deposit',username=username)}}">Deposit</a></li>
+        <li><a href="{{url_for('withdraw',username=username)}}">Withdrawal</a></li>
+        <li><a href="{{url_for('balance',username=username)}}">Check Balance</a></li>
+        <li><a href="{{url_for('statementsdata',username=username)}}">Statement</a></li>
+        <li><a href="{{url_for('accountdelete',username=username)}}">Delete Account</a></li>
+        <li><a href="{{url_for('logout',username=username)}}">Logout</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="deposit-card">
+        <h2>Deposit Money</h2>
+        <form method="post">
+
+          <label for="amount">Amount (₹):</label><br />
+          <input type="text" id="amount" name="amount" required /><br /><br />
+
+          <button type="submit">Deposit</button>
+        </form>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
+
+
+
+<a href="{{url_for('dashboard',username=username)}}"><button>Back</button></a>

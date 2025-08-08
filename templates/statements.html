@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bank Statement</title>
+   <link rel="stylesheet" href="{{url_for('static',filename='statements.css')}}" />
+
+</head>
+<body>
+<div class="dashboard">
+    <div class="sidebar">
+      <h2>Dashboard</h2>
+      <ul>
+        <li><a href="{{url_for('dashboard',username=username)}}">Home</a></li>
+        <li><a href="{{url_for('deposit',username=username)}}">Deposit</a></li>
+        <li><a href="{{url_for('withdraw',username=username)}}">Withdrawal</a></li>
+        <li><a href="{{url_for('balance',username=username)}}">Check Balance</a></li>
+        <li><a href="{{url_for('statementsdata',username=username)}}">Statement</a></li>
+        <li><a href="{{url_for('accountdelete',username=username)}}">Delete Account</a></li>
+        <li><a href="{{url_for('logout',username=username)}}">Logout</a></li>
+      </ul>
+    </div>
+  <div class="dashboard-content">
+    <h3>Deposit Statement</h3>
+    <div class="statement-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in user_statements['deposit'] %}
+          <tr>
+            <td>{{ i[1] }}</td>
+            <td>${{ i[0] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Withdraw Statement</h3>
+    <div class="statement-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in user_statements['withdraw'] %}
+          <tr>
+            <td>{{ i[1] }}</td>
+            <td>${{ i[0] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>

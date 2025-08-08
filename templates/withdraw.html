@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Withdraw</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='withdraw.css')}}" />
+</head>
+
+<body>
+  <div class="dashboard">
+    <div class="sidebar">
+      <h2>Dashboard</h2>
+      <ul>
+        <li><a href="{{url_for('dashboard',username=username)}}">Home</a></li>
+        <li><a href="{{url_for('deposit',username=username)}}">Deposit</a></li>
+        <li><a href="{{url_for('withdraw',username=username)}}">Withdrawal</a></li>
+        <li><a href="{{url_for('balance',username=username)}}">Check Balance</a></li>
+        <li><a href="{{url_for('statementsdata',username=username)}}">Statement</a></li>
+        <li><a href="{{url_for('accountdelete',username=username)}}">Delete Account</a></li>
+        <li><a href="{{url_for('logout',username=username)}}">Logout</a></li>
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <div class="withdraw-card">
+        <h2>Withdraw Amount</h2>
+        <form method="post">
+          <label for="withdrawAmount">Enter amount to withdraw:</label><br />
+          <input type="number" id="withdrawAmount" name="withdrawAmount" placeholder="e.g. 1000" required /><br />
+          <button type="submit">Withdraw</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

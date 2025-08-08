@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deposit Page</title>
+     <link rel="stylesheet" href="{{url_for('static',filename='balance.css')}}" />
+    
+</head>
+<body style="background-image: url(); background-repeat: initial; background-size: cover;">
+    <div class="dashboard">
+    <div class="sidebar">
+      <h2>Dashboard</h2>
+      <ul>
+        <li><a href="{{url_for('dashboard',username=username)}}">Home</a></li>
+        <li><a href="{{url_for('deposit',username=username)}}">Deposit</a></li>
+        <li><a href="{{url_for('withdraw',username=username)}}">Withdrawal</a></li>
+        <li><a href="{{url_for('balance',username=username)}}">Check Balance</a></li>
+        <li><a href="{{url_for('statementsdata',username=username)}}">Statement</a></li>
+        <li><a href="{{url_for('accountdelete',username=username)}}">Delete Account</a></li>
+        <li><a href="{{url_for('logout',username=username)}}">Logout</a></li>
+      </ul>
+    </div>
+<div class="dashboard-content">
+    <div class="balance-card">
+      <p class="balance-label">Available Balance:</p>
+      <p class="balance-amount">${{ balance_amount }}</p>
+    </div>
+  </div>
+</div>
+</body>
+</body>
+</html>
