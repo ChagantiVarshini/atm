@@ -1,4 +1,5 @@
 from flask import Flask,request,render_template,redirect,url_for
+import os
 import datetime
 app=Flask(__name__)
 users={}
@@ -104,6 +105,8 @@ def accountdelete(username):
     users.pop(username)
     return redirect(url_for('home'))
 app.run(debug=True,use_reloader=True)
+port = int(os.environ.get("PORT", 5000))
+app.run(host="0.0.0.0", port=port)
 
 
 
